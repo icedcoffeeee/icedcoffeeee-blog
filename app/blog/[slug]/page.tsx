@@ -4,6 +4,7 @@ import { Mdx } from "app/components/mdx";
 import { allBlogs } from "contentlayer/generated";
 import { formatDate } from "app/blog/page";
 import Balancer from "react-wrap-balancer";
+import "katex/dist/katex.min.css";
 
 export async function generateMetadata({
   params,

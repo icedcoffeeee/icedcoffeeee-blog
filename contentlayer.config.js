@@ -1,92 +1,85 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-import remarkGfm from 'remark-gfm';
-import rehypePrettyCode from 'rehype-pretty-code';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import remarkGfm from "remark-gfm";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import rehypeImageSize from "rehype-img-size";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   slug: {
-    type: 'string',
+    type: "string",
     resolve: (doc) => doc._raw.flattenedPath,
   },
-  tweetIds: {
-    type: 'array',
-    resolve: (doc) => {
-      const tweetMatches = doc.body.raw.match(
-        /<StaticTweet\sid="[0-9]+"\s\/>/g
-      );
-      return tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]) || [];
-    },
-  },
   structuredData: {
-    type: 'object',
+    type: "object",
     resolve: (doc) => ({
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
       headline: doc.title,
       datePublished: doc.publishedAt,
       dateModified: doc.publishedAt,
       description: doc.summary,
-      image: doc.image
-        ? `https://leerob.io${doc.image}`
-        : `https://leerob.io/og?title=${doc.title}`,
-      url: `https://leerob.io/blog/${doc._raw.flattenedPath}`,
+      url: `https://icedcoffeeee.vercel.app/blog/${doc._raw.flattenedPath}`,
       author: {
-        '@type': 'Person',
-        name: 'Lee Robinson',
+        "@type": "Person",
+        name: "Hazim Saharuddin",
       },
     }),
   },
 };
 
 export const Blog = defineDocumentType(() => ({
-  name: 'Blog',
+  name: "Blog",
   filePathPattern: `**/*.mdx`,
-  contentType: 'mdx',
+  contentType: "mdx",
   fields: {
     title: {
-      type: 'string',
+      type: "string",
       required: true,
     },
     publishedAt: {
-      type: 'string',
+      type: "string",
       required: true,
     },
     summary: {
-      type: 'string',
+      type: "string",
       required: true,
     },
     image: {
-      type: 'string',
+      type: "string",
     },
   },
   computedFields,
 }));
 
 export default makeSource({
-  contentDirPath: 'content',
+  contentDirPath: "content",
   documentTypes: [Blog],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [
+      [rehypeImageSize, { dir: "public" }],
+      rehypeKatex,
       rehypeSlug,
       [
         rehypePrettyCode,
         {
-          theme: 'one-dark-pro',
+          theme: "one-dark-pro",
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
-              node.children = [{ type: 'text', value: ' ' }];
+              node.children = [{ type: "text", value: " " }];
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted');
+            node.properties.className.push("line--highlighted");
           },
           onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted'];
+            node.properties.className = ["word--highlighted"];
           },
         },
       ],
@@ -94,7 +87,7 @@ export default makeSource({
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ['anchor'],
+            className: ["anchor"],
           },
         },
       ],

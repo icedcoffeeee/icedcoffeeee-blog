@@ -3,23 +3,25 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "setup": "node ./lib/setup.mjs"
+    "start": "next start"
   },
   "dependencies": {
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.2",
-    "next": "^13.4.19",
+    "katex": "^0.16.8",
+    "next": "13.4.13-canary.16",
     "next-contentlayer": "^0.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-wrap-balancer": "^1.1.0",
     "rehype-autolink-headings": "^6.1.1",
+    "rehype-katex": "^6.0.3",
     "rehype-pretty-code": "^0.10.0",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1",
     "server-only": "^0.0.1",
     "shiki": "^0.14.3",
     "swr": "^2.2.2"
@@ -31,6 +33,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",
+    "rehype-img-size": "^1.0.1",
     "tailwindcss": "^3.3.3",
     "typescript": "5.1.6"
   }

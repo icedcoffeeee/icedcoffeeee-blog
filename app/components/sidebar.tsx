@@ -12,9 +12,6 @@ const navItems = {
   "/blog": {
     name: "blog",
   },
-  "/about": {
-    name: "about",
-  },
 };
 
 export default function Navbar() {
