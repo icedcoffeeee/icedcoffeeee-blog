@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Mdx } from "app/components/mdx";
 import { allBlogs } from "contentlayer/generated";
-import { formatDate } from "app/blog/page";
 import Balancer from "react-wrap-balancer";
 import "katex/dist/katex.min.css";
+import { DateComponent } from "../formatdate";
 
 export async function generateMetadata({
   params,
@@ -54,9 +54,7 @@ export default async function Blog({ params }) {
         <Balancer>{post.title}</Balancer>
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.publishedAt)}
-        </p>
+        <DateComponent date={post.publishedAt} />
       </div>
       <Mdx code={post.body.code} />
     </section>
