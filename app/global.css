@@ -11,7 +11,6 @@ html {
   min-width: 360px;
 }
 
-
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -135,5 +134,5 @@ table {
 }
 
 p {
-  @apply mb-5 prose prose-invert;
+  @apply mb-5 prose-invert;
 }

@@ -11,6 +11,7 @@ specifiers:
   date-fns: ^2.30.0
   framer-motion: ^10.16.2
   katex: ^0.16.8
+  katex-physics: ^1.0.2
   next: ^13.4.19
   next-contentlayer: ^0.3.4
   postcss: ^8.4.29
@@ -35,8 +36,9 @@ dependencies:
   date-fns: 2.30.0
   framer-motion: 10.16.2_biqbaboplfbrettd7655fr4n2y
   katex: 0.16.8
-  next: 13.4.19_biqbaboplfbrettd7655fr4n2y
-  next-contentlayer: 0.3.4_lvtqa2li57a3oif6tdt7otid5q
+  katex-physics: 1.0.2
+  next: 13.4.19
+  next-contentlayer: 0.3.4_next@13.4.19
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-wrap-balancer: 1.1.0_react@18.2.0
@@ -2035,6 +2037,10 @@ packages:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
     dev: false
 
+  /katex-physics/1.0.2:
+    resolution: {integrity: sha512-HTmRZRUp/8U8rPokCbUDdgY7ia76g/5DWa8NqxPGRKayIaMOpVuuw+ZA5UkxSHI0LiqX26h2fCjqMtykXV968g==}
+    dev: false
+
   /katex/0.16.8:
     resolution: {integrity: sha512-ftuDnJbcbOckGY11OO+zg3OofESlbR5DRl2cmN8HeWeeFIV7wTXvAOx8kEjZjobhA+9wh2fbKeO6cdcA9Mnovg==}
     hasBin: true
@@ -2753,7 +2759,7 @@ packages:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
     dev: false
 
-  /next-contentlayer/0.3.4_lvtqa2li57a3oif6tdt7otid5q:
+  /next-contentlayer/0.3.4_next@13.4.19:
     resolution: {integrity: sha512-UtUCwgAl159KwfhNaOwyiI7Lg6sdioyKMeh+E7jxx0CJ29JuXGxBEYmCI6+72NxFGIFZKx8lvttbbQhbnYWYSw==}
     peerDependencies:
       contentlayer: 0.3.4
@@ -2763,17 +2769,14 @@ packages:
     dependencies:
       '@contentlayer/core': 0.3.4
       '@contentlayer/utils': 0.3.4
-      contentlayer: 0.3.4
-      next: 13.4.19_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
+      next: 13.4.19
     transitivePeerDependencies:
       - '@effect-ts/otel-node'
       - markdown-wasm
       - supports-color
     dev: false
 
-  /next/13.4.19_biqbaboplfbrettd7655fr4n2y:
+  /next/13.4.19:
     resolution: {integrity: sha512-HuPSzzAbJ1T4BD8e0bs6B9C1kWQ6gv8ykZoRWs5AQoiIuqbGHHdQO7Ljuvg05Q0Z24E2ABozHe6FxDvI6HfyAw==}
     engines: {node: '>=16.8.0'}
     hasBin: true
@@ -2793,9 +2796,7 @@ packages:
       busboy: 1.6.0
       caniuse-lite: 1.0.30001525
       postcss: 8.4.14
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      styled-jsx: 5.1.1_react@18.2.0
+      styled-jsx: 5.1.1
       watchpack: 2.4.0
       zod: 3.21.4
     optionalDependencies:
@@ -3479,7 +3480,7 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-jsx/5.1.1_react@18.2.0:
+  /styled-jsx/5.1.1:
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -3493,7 +3494,6 @@ packages:
         optional: true
     dependencies:
       client-only: 0.0.1
-      react: 18.2.0
     dev: false
 
   /sucrase/3.34.0:

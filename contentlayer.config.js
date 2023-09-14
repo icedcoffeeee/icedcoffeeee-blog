@@ -1,20 +1,21 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import remarkGfm from "remark-gfm";
+import macros_physics from "katex-physics";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeImageSize from "rehype-img-size";
+import rehypeKatex from "rehype-katex";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
-import rehypeImageSize from "rehype-img-size";
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
+/** @type import("contentlayer/source-files").ComputedFields */
 const computedFields = {
   slug: {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath,
   },
   structuredData: {
-    type: "object",
+    type: "json",
     resolve: (doc) => ({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -55,6 +56,8 @@ export const Blog = defineDocumentType(() => ({
   computedFields,
 }));
 
+macros_physics["\\vb"] = "\\mathbf";
+
 export default makeSource({
   contentDirPath: "content",
   documentTypes: [Blog],
@@ -62,7 +65,12 @@ export default makeSource({
     remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [
       [rehypeImageSize, { dir: "public" }],
-      rehypeKatex,
+      [
+        rehypeKatex,
+        {
+          macros: macros_physics,
+        },
+      ],
       rehypeSlug,
       [
         rehypePrettyCode,

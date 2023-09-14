@@ -47,16 +47,16 @@ export default async function Blog({ params }) {
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(post.structuredData),
+          __html: JSON.stringify(post?.structuredData),
         }}
       ></script>
       <h1 className="font-bold text-2xl tracking-tighter max-w-[650px]">
-        <Balancer>{post.title}</Balancer>
+        <Balancer>{post?.title}</Balancer>
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <DateComponent date={post.publishedAt} />
+        <DateComponent date={post?.publishedAt} />
       </div>
-      <Mdx code={post.body.code} />
+      <Mdx code={post?.body.code} />
     </section>
   );
 }
