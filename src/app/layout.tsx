@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Footer } from "@/components/footer";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "icedcoffeeee | Hazim Saharuddin",
@@ -23,6 +24,9 @@ export default function RootLayout({
           " flex flex-col"
         }
       >
+        <Link href={"/"} className="underline underline-offset-4 my-3">
+          icedcoffeeee
+        </Link>
         {children}
         <div className="grow" />
         <Footer />

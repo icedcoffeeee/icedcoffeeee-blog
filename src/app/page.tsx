@@ -6,7 +6,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <p className="underline underline-offset-4 my-3">icedcoffeeee</p>
       <p>
         Hi, my name is <B>Hazim Saharuddin</B>. I&apos;m a third-year Physics
         undergrad at <B>Universiti Malaya</B>.

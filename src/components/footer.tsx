@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <div className="border-t-2 pt-2 flex justify-between">
+    <div className="border-t-2 py-2 flex justify-between">
       <p>Hazim Saharuddin</p>
       <div className="flex gap-2">
         <Link href={"https://twitter.com/hazymm_"} target="_blank">

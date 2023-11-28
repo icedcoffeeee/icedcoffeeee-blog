@@ -11,6 +11,15 @@ export function Projects() {
         <ProjectCard title="lectcheck" link="https://lectcheck.vercel.app">
           Open platform for reviewing lecturers.
         </ProjectCard>
+        <ProjectCard
+          title="comp_phy"
+          link="https://github.com/icedcoffeeee/comp_phy"
+        >
+          Code for computational physics problems.
+        </ProjectCard>
+        <ProjectCard title="perfum-2023" link="https://perfum-2023.vercel.app">
+          Static site for the Physics Club 2023 Election.
+        </ProjectCard>
       </div>
     </>
   );
