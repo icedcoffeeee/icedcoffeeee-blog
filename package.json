@@ -1,40 +1,27 @@
 {
+  "name": "icedcoffeeee-blog",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "clsx": "^2.0.0",
-    "contentlayer": "^0.3.4",
-    "date-fns": "^2.30.0",
-    "framer-motion": "^10.16.2",
-    "katex": "^0.16.8",
-    "katex-physics": "^1.0.2",
-    "next": "^13.4.19",
-    "next-contentlayer": "^0.3.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-wrap-balancer": "^1.1.0",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-img-size": "^1.0.1",
-    "rehype-katex": "^6.0.3",
-    "rehype-pretty-code": "^0.10.0",
-    "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "remark-math": "^5.1.1",
-    "sharp": "^0.32.5",
-    "shiki": "^0.14.3"
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.0.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "20.4.4",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.29",
-    "tailwindcss": "^3.3.3",
-    "typescript": "5.1.6"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3"
   }
 }
