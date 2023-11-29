@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Rss, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -12,8 +12,14 @@ export function Footer() {
         <Link href={"https://github.com/icedcoffeeee"} target="_blank">
           <Github strokeWidth={1} />
         </Link>
-        <Link href={"https://www.linkedin.com/in/ilmi-hazim-saharuddin-a6369025a/"} target="_blank">
+        <Link
+          href={"https://www.linkedin.com/in/ilmi-hazim-saharuddin-a6369025a/"}
+          target="_blank"
+        >
           <Linkedin strokeWidth={1} />
+        </Link>
+        <Link href={"/rss.xml"} target="_blank">
+          <Rss strokeWidth={1} />
         </Link>
       </div>
     </div>

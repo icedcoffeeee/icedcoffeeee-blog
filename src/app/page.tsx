@@ -1,9 +1,11 @@
 import { Blog } from "@/components/blog";
 import { Projects } from "@/components/projects";
 import { B } from "@/components/ui/typography";
+import { generateRSS } from "@/lib/rss.xml";
 import Image from "next/image";
 
 export default function Home() {
+  generateRSS();
   return (
     <main>
       <p>
