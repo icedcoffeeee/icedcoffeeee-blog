@@ -9,16 +9,16 @@ export function Projects() {
           YouTube channel on mathematics
         </ProjectCard>
         <ProjectCard title="lectcheck" link="https://lectcheck.vercel.app">
-          Open platform for reviewing lecturers.
+          Open platform for reviewing lecturers
         </ProjectCard>
         <ProjectCard
           title="comp_phy"
           link="https://github.com/icedcoffeeee/comp_phy"
         >
-          Code for computational physics problems.
+          Code for computational physics problems
         </ProjectCard>
         <ProjectCard title="perfum-2023" link="https://perfum-2023.vercel.app">
-          Static site for the Physics Club 2023 Election.
+          Static site for the Physics Club 2023 Election
         </ProjectCard>
       </div>
     </>
@@ -35,7 +35,7 @@ function ProjectCard({
   children: string;
 }) {
   return (
-    <div className="leading-none bg-zinc-800 p-2 rounded shadow-md hover:bg-zinc-700 transition-all">
+    <div className="leading-none bg-secondary p-2 rounded shadow-md hover:bg-zinc-700 transition-all">
       <Link href={link} target="_blank">
         <p className="underline underline-offset-4 mb-3 text-white">{title}</p>
         <p>{children}</p>

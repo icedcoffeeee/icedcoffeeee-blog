@@ -19,7 +19,7 @@ export default function RootLayout({
       <body
         className={
           GeistSans.className +
-          " bg-zinc-900 text-gray-400" +
+          " bg-primary text-tertiary" +
           " h-screen w-full max-w-3xl p-3 leading-relaxed" +
           " flex flex-col"
         }
