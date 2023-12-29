@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         primary: colors.slate[900],
         secondary: colors.slate[800],
-        tertiary: colors.gray[400],
+        tertiary: colors.slate[400],
       },
     },
   },
