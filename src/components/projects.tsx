@@ -35,7 +35,7 @@ function ProjectCard({
   children: string;
 }) {
   return (
-    <div className="leading-none bg-tertiary/20 backdrop-blur-md p-2 rounded shadow-md hover:bg-zinc-700 transition-all">
+    <div className="leading-none bg-secondary/20 backdrop-blur-md p-2 rounded shadow-md hover:bg-secondary/40 transition-all">
       <Link href={link} target="_blank">
         <p className="underline underline-offset-4 mb-3 text-white">{title}</p>
         <p>{children}</p>

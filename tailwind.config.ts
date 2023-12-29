@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: colors.slate[900],
-        secondary: colors.slate[800],
+        secondary: colors.slate[600],
         tertiary: colors.slate[400],
       },
     },

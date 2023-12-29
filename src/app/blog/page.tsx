@@ -20,7 +20,7 @@ export default function Page() {
 function BlogCard({ post }: { post: Post }) {
   return (
     <Link href={post.url}>
-      <div className="rounded-md bg-neutral-800 transition-all hover:text-white shadow-md p-2">
+      <div className="rounded-md bg-secondary/20 transition-all hover:text-white shadow-md p-2">
         <p className="underline underline-offset-4">{post.title}</p>
         <time dateTime={post.date} className="text-xs">
           {format(parseISO(post.date), "LLL d, yyyy")}
