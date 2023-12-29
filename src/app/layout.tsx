@@ -9,6 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "icedcoffeeee | Hazim Saharuddin",
   description: "Personal Site of Hazim Saharuddin",
+  metadataBase: new URL("https://icedcoffeeee.vercel.app"),
   openGraph: { images: "/me.jpg" },
   twitter: { images: "/me.jpg" },
 };
