@@ -1,9 +1,7 @@
 import { Footer } from "@/components/footer";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import orbital from "public/orbital.gif";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,11 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-full flex justify-center bg-black">
-        <Image
-          src={orbital}
-          alt={"background"}
-          className="object-cover min-w-full self-center fixed -z-50 scale-150"
-        />
         <div className="min-h-full min-w-full bg-primary/50 backdrop-blur-sm md:backdrop-blur-lg -z-10 fixed top-0 left-0" />
         <div
           className={

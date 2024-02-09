@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: colors.slate[900],
-        secondary: colors.slate[600],
-        tertiary: colors.slate[400],
+        primary: colors.neutral[900],
+        secondary: colors.neutral[600],
+        tertiary: colors.neutral[400],
       },
     },
   },
