@@ -27,6 +27,6 @@ export function generateRSS() {
     feed.xml({ indent: true }),
     (error) => {
       if (error) console.log("RSS Error:", error);
-    }
+    },
   );
 }
