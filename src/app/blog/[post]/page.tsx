@@ -1,9 +1,25 @@
 import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
+import { Metadata, ResolvingMetadata } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import NextImage from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata(
+  { params }: { params: { post: string } },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const post = allPosts.find((post) => post._raw.flattenedPath === params.post);
+
+  const title = "icedcoffeeee | " + post?.title || "Hazim Saharuddin";
+  const description = post?.desc || "Personal Site of Hazim Saharuddin";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function Page({ params }: { params: { post: string } }) {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.post);

@@ -31,7 +31,11 @@ const projects: Annual[] = [
         title: "comp_phy",
         link: "https://github.com/icedcoffeeee/comp_phy",
         desc: "Code for computational physics problems",
-        points: ["Neural networks", "TD Schrodinger solvers", "Particle simulations"]
+        points: [
+          "Neural networks",
+          "TD Schrodinger solvers",
+          "Particle simulations",
+        ],
       },
       {
         title: "perfum-2023",
