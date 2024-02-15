@@ -12,7 +12,14 @@ export default function Home() {
         Hi, my name is <B>Hazim Saharuddin</B>. I&apos;m a third-year Physics
         undergrad at <B>Universiti Malaya</B>.
       </p>
-      <div className="flex justify-center my-3">
+      <div className="flex flex-col items-center justify-center my-3 gap-2 md:flex-row">
+      <Image
+          src={"/me.jpg"}
+          alt={"hazim saharuddin"}
+          width={150}
+          height={150}
+          className="object-cover rounded-md shadow-md md:w-auto"
+        />
         <Image
           src={"/experiment.png"}
           alt={"experiment"}
