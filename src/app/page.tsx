@@ -13,7 +13,7 @@ export default function Home() {
         undergrad at <B>Universiti Malaya</B>.
       </p>
       <div className="flex flex-col items-center justify-center my-3 gap-2 md:flex-row">
-      <Image
+        <Image
           src={"/me.jpg"}
           alt={"hazim saharuddin"}
           width={150}
