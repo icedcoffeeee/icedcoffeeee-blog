@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.debug {
+	@apply border border-red-500;
+}
+.math {
+	@apply overflow-x-scroll;
+}
