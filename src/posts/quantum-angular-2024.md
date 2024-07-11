@@ -44,6 +44,7 @@ so I thought I'd share it here. Enjoy!
     $$
 
     Generally a cyclic pattern:
+
     - $(x,y)→z$
     - $(y,z)→x$
     - $(y,x)→-z$

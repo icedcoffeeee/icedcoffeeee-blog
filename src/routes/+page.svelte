@@ -2,6 +2,11 @@
 	import Name from './name.svelte';
 </script>
 
+<svelte:head>
+	<title>Hazim Saharuddin</title>
+	<meta name="description" content="Physicist, developer, and leader." />
+</svelte:head>
+
 <div class="h-[87lvh] md:h-[80lvh] flex flex-col justify-end md:justify-center gap-2">
 	<p class="md:text-xl">Hi, my name is</p>
 	<Name class="w-[80%] md:w-[50%] h-fit" />

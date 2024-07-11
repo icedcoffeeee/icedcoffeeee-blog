@@ -7,18 +7,18 @@ import katex from 'rehype-katex-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.md'],
-  preprocess: [
-    vitePreprocess(),
-    mdsvex({
-      extensions: ['.md'],
-      remarkPlugins: [math],
-      rehypePlugins: [katex],
-    })
-  ],
-  kit: {
-    adapter: adapter()
-  }
+	extensions: ['.svelte', '.md'],
+	preprocess: [
+		vitePreprocess(),
+		mdsvex({
+			extensions: ['.md'],
+			remarkPlugins: [math],
+			rehypePlugins: [katex]
+		})
+	],
+	kit: {
+		adapter: adapter()
+	}
 };
 
 export default config;

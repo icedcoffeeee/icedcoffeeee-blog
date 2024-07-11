@@ -8,6 +8,11 @@
 	const specializations: [Specials, string][] = keys.map((k: Specials) => [k, specials[k]]);
 </script>
 
+<svelte:head>
+	<title>CV | Hazim Saharuddin</title>
+	<meta name="description" content="My work in one page." />
+</svelte:head>
+
 <div class="h-fit grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-20">
 	<section>
 		<InfoCard />

@@ -6,6 +6,11 @@
 	const posts: Post[] = $page.data.posts;
 </script>
 
+<svelte:head>
+	<title>Blog | Hazim Saharuddin</title>
+	<meta name="description" content="Physicist, developer, and leader." />
+</svelte:head>
+
 <h1 class="text-xl mb-3">Blog Posts</h1>
 <div class="flex flex-col">
 	{#each posts as post}
