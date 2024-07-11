@@ -52,6 +52,20 @@ export default {
 			lists: [
 				'Built a mobile-app mockup for an artificial intelligence (AI) integrated couples scheduling app.'
 			]
+		},
+		{
+			title: 'Professor Reviews Site',
+			date: [2023],
+			location: '',
+			lists: ['An open platform in reviewing lecturer teaching ability and assessment levels.']
+		},
+		{
+			title: 'Club Electoral Site',
+			date: [2023],
+			location: 'University of Malaya',
+			lists: [
+				'A website showcasing the candidates for the next generation of the physics club committee.'
+			]
 		}
 	],
 	experience: [

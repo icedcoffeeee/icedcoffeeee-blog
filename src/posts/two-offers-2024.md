@@ -2,17 +2,17 @@
 title: The Two (Opportunities) That Got Away
 date: '2024-02-09'
 tags:
-- rant
+  - rant
 ---
 
 So far in my degree, I've been approached by two lecturers to collaborate
-and/or work with. 
+and/or work with.
 
 One of them was a teaching assistant position. His teaching was a bit point-
 blank, generally speaking. It had no depth and very much algorithmic. So
 naturally, I offered to teach extra classes to the other students, as part of
-another course (volunteerism), to help lessons be more intuitive; and *guided*,
-if you will. It was supposed to show *why* formulas are the way they are,
+another course (volunteerism), to help lessons be more intuitive; and _guided_,
+if you will. It was supposed to show _why_ formulas are the way they are,
 rather than brute force. After the semester, I was excited to hear his offer to
 monetarily compensate in continuing this effort in upcoming semesters.
 
@@ -23,9 +23,9 @@ scientific community (also as part of another course), and one of my opening
 lines in proposing his advisory was "I’m a maintainer of manim" lol (I rarely
 help maintain the repo these days).
 
-He taught his course *really* well, like, pedagogically. We could understand
+He taught his course _really_ well, like, pedagogically. We could understand
 how and why, and his questions nicely led from one idea to another.
-Unfortunately, you can imagine my surprise when he graded me a B+ *smh*.
+Unfortunately, you can imagine my surprise when he graded me a B+ _smh_.
 Anyway, sometime during the semester, he asked to meet and offered me to assist
 in one of his upcoming projects.
 

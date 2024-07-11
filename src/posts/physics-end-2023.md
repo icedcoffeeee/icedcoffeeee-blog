@@ -2,7 +2,7 @@
 title: Why I'm Preparing for The End of My Physics Career
 date: '2023-11-29'
 tags:
-- rant
+  - rant
 ---
 
 I came into this field with passion and hope; I really did. But now that I'm
