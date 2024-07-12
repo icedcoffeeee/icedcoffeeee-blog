@@ -12,7 +12,7 @@
 	<Name class="w-[80%] md:w-[50%] h-fit" />
 	<p class="md:text-xl">A physicist, mentor, developer, designer, and leader.</p>
 	<div class="mt-3 flex gap-3">
-		<a href="/cv" class="bg-neutral-50 text-neutral-900">See CV</a>
+		<a href="/about" class="bg-neutral-50 text-neutral-900">About Me</a>
 		<a href="/blog">Blog</a>
 	</div>
 </div>
