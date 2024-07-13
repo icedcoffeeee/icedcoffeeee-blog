@@ -45,12 +45,12 @@ hadn’t implemented it yet, so I guess it’s not all sunshine.
 ### The Bad
 
 However, as much as I love SvelteKit and how I’ve implemented it in two
-projects of mine, it’s not without its flaws. The first is that it doesn’t have
-a built-in option for image optimization. I ([and some
-others](https://www.reddit.com/r/sveltejs/comments/zuw5gs/comment/j1ng5xk/)
-feel like that’s one of the important part of a javascript framework. You would
-want to load into a website and see empty spots between texts, only for them to
-pop into existence, pulling your focus from the main text.
+projects of mine, it’s not without its flaws. The most notable being: it
+doesn’t have a built-in option for image optimization. I ([and some
+others](https://www.reddit.com/r/sveltejs/comments/zuw5gs/comment/j1ng5xk/))
+feel like that’s one of the important part of a javascript framework. You
+wouldn't want to load into a website and see empty spots between texts, only
+for them to pop into existence, pulling your focus from the main text.
 
 Some third-party libraries do implement it using
 [sharp](https://sharp.pixelplumbing.com/) under the hood for resizing the
