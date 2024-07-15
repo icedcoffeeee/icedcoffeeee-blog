@@ -56,7 +56,7 @@
 <style lang="postcss">
 	h2 {
 		@apply text-xl bg-gradient-to-r from-blue-500 to-violet-900 bg-clip-text text-transparent;
-		fsection-family: 'Silkscreen', sans-serif;
+		font-family: 'Silkscreen', sans-serif;
 	}
 	p {
 		@apply text-sm;
