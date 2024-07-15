@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils';
+	import { Rss } from 'lucide-svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -11,7 +12,10 @@
 	<meta name="description" content="Physicist, developer, and leader." />
 </svelte:head>
 
-<h1 class="text-xl mb-3">Blog Posts</h1>
+<div class="flex justify-between items-center">
+	<h1 class="text-xl mb-3">Blog Posts</h1>
+	<a href="/rss.xml"><Rss size="1rem" /></a>
+</div>
 <div class="flex flex-col gap-2">
 	{#each posts as post}
 		<a href="blog/{post.slug}" class="border-t border-t-neutral-700">
