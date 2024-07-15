@@ -1,4 +1,5 @@
 <script lang="ts">
+	import library from '$lib/assets/library.jpg';
 	import Name from './name.svelte';
 </script>
 
@@ -17,7 +18,7 @@
 	</div>
 </div>
 
-<img class="hero-image" src="/library.jpg" alt="Hazim Saharuddin" />
+<img class="hero-image" src={library} alt="Hazim Saharuddin" />
 
 <style lang="postcss">
 	a {

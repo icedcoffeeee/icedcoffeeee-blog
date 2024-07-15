@@ -1,3 +1,12 @@
+<script lang="ts">
+	import library2 from '$lib/assets/library-2.jpg';
+	import lab from '$lib/assets/lab.jpg';
+	import whiteboard from '$lib/assets/whiteboard.jpg';
+	import experiment from '$lib/assets/experiment.jpg';
+	import traffic from '$lib/assets/traffic.jpg';
+	import tutor from '$lib/assets/tutor.jpg';
+</script>
+
 <svelte:head>
 	<title>Hazim Saharuddin | About</title>
 </svelte:head>
@@ -5,8 +14,8 @@
 <h1 class="font-['Silkscreen',_sans-serif] text-xl md:text-3xl mb-4 md:mb-8">About Me</h1>
 <div class="md:mx-10 flex flex-col gap-4">
 	<div class="grid grid-cols-2 gap-4 place-items-center md:grid-cols-4">
-		<img src="library-2.jpg" alt="library-2" class="aspect-[9/16]" />
-		<img src="lab.jpg" alt="lab" class="md:order-last" />
+		<img src={library2} alt="library-2" class="aspect-[9/16]" />
+		<img src={lab} alt="lab" class="md:order-last" />
 		<p class="col-span-2">
 			I’m currently a final-year physics undergraduate at
 			<a href="https://um.edu.my">University of Malaya</a>. I'm currently doing my final year
@@ -18,7 +27,7 @@
 		</p>
 	</div>
 	<div class="grid grid-cols-1 gap-4 place-items-center md:grid-cols-2">
-		<img src="whiteboard.jpg" alt="whiteboard" class="md:order-last aspect-[20/9]" />
+		<img src={whiteboard} alt="whiteboard" class="md:order-last aspect-[20/9]" />
 		<p class="">
 			But the truth behind the universe is not just in these symbols, but rather the approach, the
 			thought, and the application. Understanding electromagnetic waves meant nothing until the
@@ -26,9 +35,9 @@
 		</p>
 	</div>
 	<div class="grid grid-cols-2 gap-4 place-items-center md:grid-cols-4">
-		<img src="experiment.jpg" alt="experiment" class="aspect-[20/9] col-span-2 md:order-last" />
-		<img src="traffic.jpg" alt="traffic" class="aspect-[9/16] md:order-first md:row-span-2" />
-		<img src="tutor.jpg" alt="tutor" class="md:row-span-2" />
+		<img src={experiment} alt="experiment" class="aspect-[20/9] col-span-2 md:order-last" />
+		<img src={traffic} alt="traffic" class="aspect-[9/16] md:order-first md:row-span-2" />
+		<img src={tutor} alt="tutor" class="md:row-span-2" />
 		<p class="col-span-2">
 			Which is why I've always been passionate about teaching the intricacies behind the gems of the
 			universe, with a specific <a href="https://youtube.com/@teh_ais">YouTube channel</a> dedicated

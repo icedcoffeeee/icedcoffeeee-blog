@@ -1,11 +1,12 @@
 <script lang="ts">
 	import colors from 'tailwindcss/colors';
+	import me from '$lib/assets/me.jpg';
 	const { neutral } = colors;
 	const logo = (slug: string) => `https://cdn.simpleicons.org/${slug}/${neutral[50].slice(1)}`;
 </script>
 
 <div class="flex gap-2 p-2 border border-neutral-50/10 rounded">
-	<img src="/me.jpg" alt="Hazim Saharuddin" class="w-[30%] rounded object-cover" />
+	<img src={me} alt="Hazim Saharuddin" class="w-[30%] rounded object-cover" />
 	<div class="w-full flex flex-col">
 		<h1>Ilmi Hazim bin Saharuddin</h1>
 		<p>BSc. Physics</p>

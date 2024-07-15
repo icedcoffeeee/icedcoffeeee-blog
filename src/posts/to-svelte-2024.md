@@ -44,19 +44,23 @@ hadn’t implemented it yet, so I guess it’s not all sunshine.
 
 ### The Bad
 
-However, as much as I love SvelteKit and how I’ve implemented it in two
+~~However, as much as I love SvelteKit and how I’ve implemented it in two
 projects of mine, it’s not without its flaws. The most notable being: it
 doesn’t have a built-in option for image optimization. I ([and some
 others](https://www.reddit.com/r/sveltejs/comments/zuw5gs/comment/j1ng5xk/))
 feel like that’s one of the important part of a javascript framework. You
 wouldn't want to load into a website and see empty spots between texts, only
-for them to pop into existence, pulling your focus from the main text.
+for them to pop into existence, pulling your focus from the main text.~~
 
-Some third-party libraries do implement it using
+~~Some third-party libraries do implement it using
 [sharp](https://sharp.pixelplumbing.com/) under the hood for resizing the
 images into various formats, but I hadn’t found one that cleanly integrates
 with my TailwindCSS / PostCSS setup; all page-styling classes fall right
-through. I’m not sure if I’m doing something wrong, let me know if you do.
+through. I’m not sure if I’m doing something wrong, let me know if you do.~~
+
+Apparently, this wasn't a problem with SvelteKit; the bundler,
+[Vite](https://vitejs.dev/guide/assets), already has this functionality! I knew
+I was missing something. Well, that's all for my first impressions lol.
 
 ### Conclusion
 
