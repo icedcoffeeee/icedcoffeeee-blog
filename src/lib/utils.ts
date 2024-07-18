@@ -1,3 +1,5 @@
+import colors from 'tailwindcss/colors';
+
 type DateStyle = Intl.DateTimeFormatOptions['dateStyle'];
 
 export function formatDate(date: string, dateStyle: DateStyle = 'medium', locales = 'en') {
@@ -6,3 +8,6 @@ export function formatDate(date: string, dateStyle: DateStyle = 'medium', locale
 	const formatter = new Intl.DateTimeFormat(locales, { dateStyle });
 	return formatter.format(toFormat);
 }
+
+export const logo = (slug: string) =>
+	`https://cdn.simpleicons.org/${slug}/${colors.neutral[50].slice(1)}`;

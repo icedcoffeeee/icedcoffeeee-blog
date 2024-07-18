@@ -15,6 +15,6 @@ export async function load({ fetch }: ServerLoadEvent) {
 		}, [])
 		.reverse();
 	const colors = Object.keys(TWcolors) as (keyof typeof TWcolors)[];
-	const tag_colors = Object.fromEntries(tags.map((v, i) => [v, TWcolors[colors[10 + i]][500]]));
+	const tag_colors = Object.fromEntries(tags.map((v, i) => [v, TWcolors[colors[10 + i]][900]]));
 	return { posts, tag_colors };
 }

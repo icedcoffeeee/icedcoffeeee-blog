@@ -11,7 +11,7 @@
 <div class="h-[87lvh] md:h-[80lvh] flex flex-col justify-end md:justify-center gap-2">
 	<p class="md:text-xl">Hi, my name is</p>
 	<Name class="w-[80%] md:w-[50%] h-fit" />
-	<p class="md:text-xl">A physicist, mentor, developer, designer, and leader.</p>
+	<p class="md:text-xl">A physicist, developer, and educator.</p>
 	<div class="mt-3 flex gap-3">
 		<a href="/about" class="bg-neutral-50 text-neutral-900">About Me</a>
 		<a href="/blog">Blog</a>

@@ -8,7 +8,7 @@ export type ListType = {
 export const specials = {
 	Physics:
 		'Laser Physics, Optical Fibres and Waveguides, Semiconductor Physics, Material Junctions, Gas Discharge, Plasma Physics, Computational Simulation, Neural Networks.',
-	Code: 'Python, C++, Javascript, NeoVim, VSCode, GitHub, Linux, Windows PowerShell.',
+	Code: 'Python, MATLAB, C++, Javascript, NeoVim, VSCode, GitHub, Linux, Windows PowerShell.',
 	Graphics: 'Adobe Illustrator, Adobe Photoshop, Figma, DaVinci Resolve.',
 	Office: 'Microsoft Suite, Google Workspace, LaTeX',
 	Hardware: 'Arduino, Raspberry Pi'
@@ -56,7 +56,7 @@ export default {
 		{
 			title: 'Professor Reviews Site',
 			date: [2023],
-			location: '',
+			location: 'LectCheck',
 			lists: ['An open platform in reviewing lecturer teaching ability and assessment levels.']
 		},
 		{
