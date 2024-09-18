@@ -6,7 +6,7 @@
   @apply border border-red-500;
 }
 
-name {
+.name {
   font-family: var(--homemade-apple), cursive;
   @apply text-2xl;
 }

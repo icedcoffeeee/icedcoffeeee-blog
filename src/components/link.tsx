@@ -10,8 +10,7 @@ export default function AppendingLink({
 }: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const path = usePathname()
     .split("/")
-    .filter((v, i, a) => a.indexOf(v) === i);
+    .filter((v) => v !== "");
   href = path.concat([href ?? ""]).join("/");
-  console.log(path);
-  return <Link href={href} {...props} />;
+  return <Link href={"/" + href} {...props} />;
 }
