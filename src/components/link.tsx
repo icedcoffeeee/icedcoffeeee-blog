@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnchorHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, useEffect } from "react";
 
 export default function AppendingLink({
   href,
@@ -12,5 +12,17 @@ export default function AppendingLink({
     .split("/")
     .filter((v) => v !== "");
   href = path.concat([href ?? ""]).join("/");
+  useEffect(() => {
+    if (window.innerWidth < 640)
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        left: 0,
+      });
+    else
+      window.scrollTo({
+        top: 0,
+        left: document.body.scrollWidth,
+      });
+  }, []);
   return <Link href={"/" + href} {...props} />;
 }
