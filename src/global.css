@@ -1,0 +1,4 @@
+note {
+  @apply border-l-4 border-neutral-800 bg-neutral-800/10 w-full px-4 py-1 block
+  lg:absolute lg:right-0 lg:max-w-60 lg:translate-x-[110%] lg:translate-y-[-150%];
+}

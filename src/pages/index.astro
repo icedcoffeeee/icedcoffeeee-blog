@@ -1,0 +1,32 @@
+---
+import Layout from "./layout.astro";
+import "@fontsource/homemade-apple";
+
+import { Image } from "astro:assets";
+import lib2 from "@/assets/library-2.jpg";
+---
+
+<Layout>
+  <Image
+    src={lib2}
+    alt={"Image of me"}
+    class={"aspect-square w-full object-cover object-[50%_30%] rounded mb-4 lg:aspect-video"}
+    loading={"eager"}
+  />
+  <p>Hi, my name is</p>
+  <h1 class="[font-family:Homemade_Apple,_cursive] text-2xl my-4">
+    Hazim Saharuddin
+  </h1>
+  <p class="mb-4">Some things I'm good at:</p>
+  <ul class="ml-8 space-y-2">
+    <li><a href="/physics">Theoretical Physics</a></li>
+    <li><a href="/">Software Engineering</a></li>
+    <li><a href="/">Web Development</a></li>
+  </ul>
+</Layout>
+
+<style>
+  a {
+    @apply text-blue-500 no-underline;
+  }
+</style>
