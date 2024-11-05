@@ -3,7 +3,11 @@
 	import { Rss } from 'lucide-svelte';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const { posts, tag_colors } = data;
 </script>
 

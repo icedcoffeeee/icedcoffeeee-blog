@@ -1,4 +1,9 @@
 <script lang="ts">
+	interface Props {
+		[key: string]: any
+	}
+
+	let { ...rest }: Props = $props();
 	const style = {
 		class: 'draw',
 		fill: 'white',
@@ -15,7 +20,7 @@
 	viewBox="8.6077 -454.85 1163.7 506.26"
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	{...$$restProps}
+	{...rest}
 >
 	<defs>
 		<path

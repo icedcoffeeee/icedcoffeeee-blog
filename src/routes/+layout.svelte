@@ -2,6 +2,11 @@
 	import '../app.css';
 	import { logo } from '$lib/utils';
 	import { onNavigate } from '$app/navigation';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	onNavigate(function (nav) {
 		///@ts-ignore
@@ -46,7 +51,7 @@
 		</div>
 	</nav>
 
-	<slot />
+	{@render children?.()}
 </div>
 
 <style lang="postcss">

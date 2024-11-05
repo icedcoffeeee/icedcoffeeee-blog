@@ -1,8 +1,17 @@
 <script lang="ts">
-	export let title: string = 'Test';
-	export let date: (number | null)[] = [2021, 2022];
-	export let location: string = 'test';
-	export let lists: string[] = ['one', 'two'];
+	interface Props {
+		title?: string;
+		date?: (number | null)[];
+		location?: string;
+		lists?: string[];
+	}
+
+	let {
+		title = 'Test',
+		date = [2021, 2022],
+		location = 'test',
+		lists = ['one', 'two']
+	}: Props = $props();
 </script>
 
 <h3 class="mt-5 text-lg">{title}</h3>

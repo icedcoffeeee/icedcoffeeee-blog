@@ -3,7 +3,11 @@
 	import { formatDate } from '$lib/utils';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <!-- SEO -->
@@ -27,5 +31,5 @@
 		{/each}
 	</div>
 
-	<svelte:component this={data.content} />
+	<data.content />
 </article>
