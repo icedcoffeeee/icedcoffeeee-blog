@@ -2,7 +2,7 @@
 title: The Two (Opportunities) That Got Away
 date: '2024-02-09'
 tags:
-  - rant
+  - academia
 ---
 
 So far in my degree, I've been approached by two lecturers to collaborate

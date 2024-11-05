@@ -3,7 +3,6 @@ title: 'To Svelte'
 date: '2024-7-13'
 tags:
   - webdev
-  - rant
 ---
 
 Recently I rewrote my web app ([LectCheck](https://lectcheck.vercel.app)) and

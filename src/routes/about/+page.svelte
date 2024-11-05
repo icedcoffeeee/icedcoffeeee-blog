@@ -11,7 +11,7 @@
 	<title>Hazim Saharuddin | About</title>
 </svelte:head>
 
-<h1 class="font-['Silkscreen',_sans-serif] text-xl md:text-3xl mb-4 md:mb-8">About Me</h1>
+<h1 class="font-mono mb-4 md:mb-8">About Me</h1>
 <div class="md:mx-10 flex flex-col gap-4">
 	<div class="grid grid-cols-2 gap-4 place-items-center md:grid-cols-4">
 		<img src={library2} alt="library-2" class="aspect-[9/16]" />
@@ -48,9 +48,6 @@
 </div>
 
 <style lang="postcss">
-	p {
-		@apply md:text-lg;
-	}
 	img {
 		@apply w-full h-full object-cover rounded;
 	}

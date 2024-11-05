@@ -20,7 +20,7 @@
 		);
 	});
 
-	const fonts = ['Josefin Sans', 'Slackside One', 'Silkscreen'];
+	const fonts = ['EB Garamond', 'JetBrains Mono'];
 	const headerFont = fonts.map((f) => 'family=' + f.replaceAll(' ', '+')).join('&');
 </script>
 
@@ -28,11 +28,9 @@
 	<link href="https://fonts.googleapis.com/css2?{headerFont}&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<div class="main-font">
-	<nav
-		class="mb-5 pr-5 w-full flex justify-between gap-5 md:text-2xl font-['Slackside_One',_sans-serif]"
-	>
-		<div class="h-full flex gap-4 items-end mt-2">
+<div class="font-serif text-xl md:text-2xl">
+	<nav class="mb-5 w-full flex items-center justify-between gap-5 font-mono">
+		<div class="h-full flex gap-4 md:scale-110">
 			<a target="_blank" href="https://x.com/_hazym">
 				<img height="14" width="14" src={logo('x')} alt="x social account" />
 			</a>
@@ -46,7 +44,6 @@
 		<div class="flex gap-5">
 			<a href="/">Home</a>
 			<a href="/about">About</a>
-			<a href="/cv">CV</a>
 			<a href="/blog">Blog</a>
 		</div>
 	</nav>
@@ -57,8 +54,5 @@
 <style lang="postcss">
 	a {
 		@apply decoration-neutral-50 hover:underline;
-	}
-	.main-font {
-		font-family: 'Josefin Sans', sans-serif;
 	}
 </style>

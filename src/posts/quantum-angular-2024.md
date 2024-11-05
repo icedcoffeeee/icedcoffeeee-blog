@@ -2,8 +2,7 @@
 title: 'Quick Concepts: Quantum Orbital and Spin'
 date: '2024-07-06'
 tags:
-  - quickconcepts
-  - quantumphysics
+  - quantum
 ---
 
 This note was from my classes and everyone that have read it found it profound,
