@@ -53,7 +53,7 @@ so I thought I'd share it here. Enjoy!
 
 - Eigenstates of $\bold L^2$ and $\bold L_z$
 
-  <span id="angular-identity"/>
+  <span id="angular-identity"></span>
 
   $$
   \bold L^2\ket{l}=
