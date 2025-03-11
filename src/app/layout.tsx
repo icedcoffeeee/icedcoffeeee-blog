@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           "antialiased",
         ].join(" ")}
       >
-        <nav className="absolute top-0 font-mono font-bold w-full flex justify-between p-4">
+        <nav className="sticky top-0 z-10 font-mono font-bold w-full flex justify-between p-4 bg-background/20 backdrop-blur">
           <Link href="/">icedcoffeeee</Link>
           <span className="flex gap-4">
             <Link href="/about">about</Link>

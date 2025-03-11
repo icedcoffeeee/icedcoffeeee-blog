@@ -19,8 +19,32 @@
   --font-mono: var(--font-ibm-plex-mono);
 }
 
-.debug {
-  border: 1px solid red;
+@layer components {
+  h1 {
+    @apply mt-5 text-xl font-mono;
+  }
+
+  .fade {
+    opacity: 0;
+    animation-name: fade;
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@layer utilities {
+  .debug {
+    border: 1px solid red;
+  }
 }
 
 /** > * {*/
