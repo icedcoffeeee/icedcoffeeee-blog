@@ -32,11 +32,11 @@ function WormHoleObject() {
   const N = 40;
   const z_ = Array(N + 1)
     .fill(0)
-    .map((_, i) => ((i / N) * 2 - 1) * 3);
-  const r_ = (z: number) => Math.pow(Math.tan((z * Math.PI) / 2 / 3), 2) + 0.05;
+    .map((_, i) => ((i / N) * 2 - 1) * 2);
+  const r_ = (z: number) => Math.pow(z, 4) + 0.05;
 
   return (
-    <group ref={group}>
+    <group ref={group} scale={2}>
       {z_.map((z, i) => {
         const r = r_(z);
         const points = z_.map((z) => new Vector3(r_(z), 0, z));

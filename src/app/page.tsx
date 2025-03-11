@@ -9,7 +9,7 @@ export default function Page() {
       <section className="-m-4 p-4 h-[calc(100svh-15*var(--spacing))] flex flex-col justify-between items-center">
         <div className="self-start">
           <h1 className="m-0 text-4xl font-mono">Hazim Saharuddin</h1>
-          <p>Physicist, developer, educator</p>
+          <p>Physicist, Developer, Educator</p>
         </div>
         <WormHole></WormHole>
         <blockquote className="italic text-right self-end max-w-lg">
