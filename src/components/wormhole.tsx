@@ -1,20 +1,22 @@
 "use client";
 
-import { Fragment, useLayoutEffect, useRef } from "react";
+import { Fragment, useLayoutEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import { EllipseCurve, Group, Line, Vector2, Vector3 } from "three";
 import { getColor } from "./color-state";
 
 export function WormHole() {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div
-      className="absolute top-0 -z-10 w-full h-full transition-opacity fade"
+      data-loaded={loaded}
+      className="absolute top-0 -z-10 w-full h-full transition-all opacity-0 data-[loaded=true]:opacity-100"
       style={{
         maskImage:
           "linear-gradient(to bottom, rgba(0,0,0,0), white, rgba(0,0,0,0))",
       }}
     >
-      <Canvas camera={{ rotation: [0, 0, 0.4] }}>
+      <Canvas onCreated={() => setLoaded(true)} camera={{ rotation: [0, 0, 0.4] }}>
         <WormHoleObject></WormHoleObject>
       </Canvas>
     </div>

@@ -10,7 +10,7 @@ import { getColor } from "./color-state";
 
 export function Orbital({ shaders }: { shaders: Shaders }) {
   return (
-    <div className="absolute top-0 w-full h-full -z-10">
+    <div className="absolute top-0 w-full h-full">
       <Canvas>
         <OrbitalObject shaders={shaders}></OrbitalObject>
       </Canvas>
@@ -33,17 +33,16 @@ export function OrbitalObject({ shaders }: { shaders: Shaders }) {
   const mesh = useRef<Mesh>(null);
   const color = getColor();
 
-  useFrame(({ clock, camera }) => {
+  useFrame(({ clock, pointer, camera }) => {
     if (!mesh.current) return;
-    mesh.current.rotation.x = 0.1 * clock.elapsedTime;
-    mesh.current.rotation.y = 0.1 * clock.elapsedTime;
-
+    mesh.current.rotation.x = -pointer.y;
+    mesh.current.rotation.y = clock.elapsedTime + pointer.x;
     // @ts-ignore
     mesh.current.material.uniforms.cameraPos.value.copy(camera.position);
   });
 
   return (
-    <mesh ref={mesh} scale={3}>
+    <mesh ref={mesh} scale={5}>
       <boxGeometry></boxGeometry>
       <rawShaderMaterial
         args={[
@@ -53,8 +52,8 @@ export function OrbitalObject({ shaders }: { shaders: Shaders }) {
               base: { value: new Color(color) },
               map: { value: texture },
               cameraPos: { value: new Vector3() },
-              threshold: { value: 0.25 },
-              opacity: { value: 0.25 },
+              threshold: { value: 0.2 },
+              opacity: { value: 0.01 },
               range: { value: 0.1 },
               steps: { value: 100 },
               frame: { value: 0 },

@@ -24,12 +24,10 @@ export default function Page() {
         <ChevronDown className="absolute bottom-4 animate-bounce"></ChevronDown>
       </section>
 
-      <section className="relative -m-4 min-h-[50svh] w-svw flex justify-center items-center">
-        {
-          //<div className="relative size-30 rounded-full overflow-clip shadow">
-          //<Image src="/images/me.jpg" alt="me" fill></Image>
-          //</div>
-        }
+      <section className="relative -m-4 min-h-svh w-svw flex justify-center items-center">
+        <div className="relative size-30 rounded-full overflow-clip shadow z-10">
+          <Image src="/images/me.jpg" alt="me" fill></Image>
+        </div>
         <Orbital shaders={shaders}></Orbital>
       </section>
 

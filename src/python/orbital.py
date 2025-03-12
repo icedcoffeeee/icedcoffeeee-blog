@@ -15,15 +15,23 @@ def xyz(shape=32, limits=[-4, 4]):
     return r, theta, phi
 
 
-def get_orbital(m: int, n: int):
+def get_orbital(n: int):
     r, theta, phi = xyz()
     radial = np.exp(-((r - 2) ** 2))
-    data = np.abs(sc.special.sph_harm(m, n, theta, phi) ** 2) * radial
+    data = (
+        np.abs(
+            np.sum(
+                [sc.special.sph_harm(m, n, theta, phi) ** 2 for m in range(n)], axis=0
+            )
+        )
+        * radial
+    )
     return data
 
 
 if __name__ == "__main__":
-    data = get_orbital(0, 2).reshape(-1)
+    data = get_orbital(2)
+    data = data.reshape(-1)
     data -= np.min(data)
     data /= np.max(data)
     data *= 255
