@@ -1,7 +1,8 @@
 import "./globals.css";
-import type { Metadata } from "next";
-import { Karla, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { GitHub, X } from "@/components/icons";
+import { Karla, IBM_Plex_Mono } from "next/font/google";
 import { ReactNode } from "react";
 
 const karla = Karla({
@@ -34,9 +35,21 @@ export default function Layout({ children }: { children: ReactNode }) {
       >
         <nav className="sticky top-0 z-10 font-mono font-bold w-full flex justify-between p-4 bg-background/20 backdrop-blur">
           <Link href="/">icedcoffeeee</Link>
-          <span className="flex gap-4">
-            <Link href="/about">about</Link>
-            <Link href="/">blog</Link>
+          <span className="w-1/2 flex gap-4 justify-end items-center">
+            <Link
+              href={"https://github.com/icedcoffeeee"}
+              target="_blank"
+              className="h-[60%]"
+            >
+              <GitHub></GitHub>
+            </Link>
+            <Link
+              href={"https://x.com/@hazymm_"}
+              target="_blank"
+              className="h-[60%]"
+            >
+              <X></X>
+            </Link>
           </span>
         </nav>
         <div className="p-4">{children}</div>
