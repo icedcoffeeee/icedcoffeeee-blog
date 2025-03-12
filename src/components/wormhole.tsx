@@ -1,14 +1,14 @@
 "use client";
 
-import { Fragment, useLayoutEffect, useRef, useState } from "react";
+import { Fragment, useLayoutEffect, useRef } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import { EllipseCurve, Group, Line, Vector2, Vector3 } from "three";
+import { getColor } from "./color-state";
 
 export function WormHole() {
   return (
     <div
-      id="canvas-container"
-      className="absolute top-0 -z-10 w-svw h-svh transition-opacity fade"
+      className="absolute top-0 -z-10 w-full h-full transition-opacity fade"
       style={{
         maskImage:
           "linear-gradient(to bottom, rgba(0,0,0,0), white, rgba(0,0,0,0))",
@@ -74,12 +74,9 @@ function LineF({ points, ...props }: LineF) {
   useLayoutEffect(() => {
     if (!line.current) return;
     line.current.geometry.setFromPoints(points);
-  });
+  }, []);
 
-  const media = window.matchMedia("(prefers-color-scheme: light)");
-  const set = () => (media.matches ? "#000000" : "#ffffff");
-  let [color, setColor] = useState(set());
-  media.addEventListener("change", () => setColor(set()));
+  const color = getColor();
 
   return (
     // @ts-ignore
