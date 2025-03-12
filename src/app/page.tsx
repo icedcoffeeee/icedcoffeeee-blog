@@ -2,12 +2,11 @@ import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 //import { Orbital } from "@/components/orbital";
 import { WormHole } from "@/components/wormhole";
-//import { getShaders } from "@/lib";
-import { getProjects, type Project } from "@/lib";
+import { getData, type Project } from "@/lib";
+import Link from "next/link";
 
 export default function Page() {
-  const projects = getProjects();
-  //const shaders = getShaders();
+  const { projects, posts } = getData();
   return (
     <main>
       <section className="-m-4 p-4 h-[calc(100svh-15*var(--spacing))] flex flex-col justify-between items-center">
@@ -34,15 +33,40 @@ export default function Page() {
         //</section>
       }
 
-      <h1>My Projects</h1>
-      <section className="my-5 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {projects.map((p, i) => (
-          <Project key={i} project={p}></Project>
-        ))}
-      </section>
+      <div className="lg:grid lg:grid-cols-2 gap-8">
+        <div>
+          <h1>Projects</h1>
+          <section className="my-5 grid gap-4 md:grid-cols-2">
+            {projects.map((p, i) => (
+              <Project key={i} project={p}></Project>
+            ))}
+          </section>
+        </div>
 
-      <h1>Remarks</h1>
-      <section className="my-5"></section>
+        <div>
+          <h1>Posts</h1>
+          <section className="overflow-x-scroll w-full">
+            <div className="posts my-5 mx-2 md:mx-0 w-max md:w-full grid [grid-template-columns:80svw_repeat(2,max-content)] md:[grid-template-columns:1fr_repeat(2,max-content)] border-b border-foreground/50">
+              <div className="posts contents font-bold">
+                <div>Title</div>
+                <div>Date</div>
+                <div>Tags</div>
+              </div>
+              {posts.map((p, i) => (
+                <Link
+                  href={"/posts/" + p.slug}
+                  key={i}
+                  className="posts contents"
+                >
+                  <div className="line-clamp-2">{p.title}</div>
+                  <div>{p.date}</div>
+                  <div>{p.tags}</div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
   );
 }

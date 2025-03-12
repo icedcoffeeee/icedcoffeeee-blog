@@ -33,6 +33,10 @@
     @apply bg-red-700/50 px-1 rounded mx-1;
   }
 
+  .posts > div {
+    @apply border-t border-foreground/50 px-4;
+  }
+
   .debug {
     border: 1px solid red;
   }
