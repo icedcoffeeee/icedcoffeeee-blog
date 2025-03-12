@@ -2,9 +2,13 @@ import { fp } from "@/lib";
 import { readFileSync } from "fs";
 import { notFound } from "next/navigation";
 
-import { remark } from "remark";
-import html from "remark-html";
 import matter from "gray-matter";
+import { unified } from "unified";
+import parse from "remark-parse";
+import math from "remark-math";
+import mark2hype from "remark-rehype";
+import stringify from "rehype-stringify";
+import katex from "rehype-katex";
 
 type Page = { params: Promise<{ slug: string }> };
 export default async function Page({ params }: Page) {
@@ -18,8 +22,19 @@ export default async function Page({ params }: Page) {
   }
 
   const { data, ...frontmatter } = matter(contents);
-  const content = await remark()
-    .use(html)
+  const content = await unified()
+    .use(parse)
+    .use(math)
+    .use(mark2hype)
+    .use(katex, {
+      displayMode: true,
+      macros: {
+        "\\vb": "\\bold",
+        "\\va": "\\vec{\\bold #1}",
+        "\\dd": "\\,\\mathrm{d}",
+      },
+    })
+    .use(stringify)
     .process(frontmatter.content)
     .then((v) => v.toString());
 
@@ -33,7 +48,7 @@ export default async function Page({ params }: Page) {
   return (
     <main className="flex flex-col items-center">
       <div className="max-w-lg">
-        <span>{formatDate.format(trueDate)}</span>
+        <span className="text-sm">{formatDate.format(trueDate)}</span>
         <h1 className="mt-0 mb-5">{data.title}</h1>
         <div
           className="text-justify"
