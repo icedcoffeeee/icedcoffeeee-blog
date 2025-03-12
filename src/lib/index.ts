@@ -2,7 +2,7 @@ import YAML from "yaml";
 import path from "path";
 import { readFileSync } from "fs";
 
-function fp(fp: string) {
+export function fp(fp: string) {
   return path.resolve(process.cwd(), "src/" + fp);
 }
 

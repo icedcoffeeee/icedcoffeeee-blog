@@ -19,13 +19,13 @@
   --font-mono: var(--font-ibm-plex-mono);
 }
 
-@layer components {
+@layer utilities {
   h1 {
     @apply mt-5 text-xl font-mono;
   }
-}
-
-@layer utilities {
+  code {
+    @apply font-mono bg-foreground/10 w-full block p-2 my-2 rounded;
+  }
   .debug {
     border: 1px solid red;
   }

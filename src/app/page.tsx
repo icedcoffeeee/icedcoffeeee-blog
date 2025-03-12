@@ -12,7 +12,7 @@ export default function Page() {
     <main>
       <section className="-m-4 p-4 h-[calc(100svh-15*var(--spacing))] flex flex-col justify-between items-center">
         <div className="self-start">
-          <h1 className="m-0 text-4xl font-mono">Hazim Saharuddin</h1>
+          <h1 className="m-0 text-4xl font-mono font-bold">Hazim Saharuddin</h1>
           <p>Physicist, Developer, Educator</p>
         </div>
         <WormHole></WormHole>
@@ -40,6 +40,9 @@ export default function Page() {
           <Project key={i} project={p}></Project>
         ))}
       </section>
+
+      <h1>Remarks</h1>
+      <section className="my-5"></section>
     </main>
   );
 }

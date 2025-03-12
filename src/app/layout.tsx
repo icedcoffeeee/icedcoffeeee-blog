@@ -11,7 +11,7 @@ const karla = Karla({
 });
 
 const ibm_plex_mono = IBM_Plex_Mono({
-  weight: "700",
+  weight: "500",
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
 });
