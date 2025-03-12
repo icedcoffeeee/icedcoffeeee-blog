@@ -11,7 +11,12 @@ import { getColor } from "./color-state";
 export function Orbital({ shaders }: { shaders: Shaders }) {
   return (
     <div className="absolute top-0 w-full h-full">
-      <Canvas>
+      <Canvas
+        style={{
+          maskImage:
+            "linear-gradient(to bottom, rgba(0,0,0,0), white, rgba(0,0,0,0))",
+        }}
+      >
         <OrbitalObject shaders={shaders}></OrbitalObject>
       </Canvas>
     </div>
@@ -33,16 +38,16 @@ export function OrbitalObject({ shaders }: { shaders: Shaders }) {
   const mesh = useRef<Mesh>(null);
   const color = getColor();
 
-  useFrame(({ clock, pointer, camera }) => {
+  useFrame(({ clock, camera }) => {
     if (!mesh.current) return;
-    mesh.current.rotation.x = -pointer.y;
-    mesh.current.rotation.y = clock.elapsedTime + pointer.x;
+    mesh.current.rotation.z = 0.001 * window.scrollY;
+    mesh.current.rotation.y = 0.5 * clock.elapsedTime;
     // @ts-ignore
     mesh.current.material.uniforms.cameraPos.value.copy(camera.position);
   });
 
   return (
-    <mesh ref={mesh} scale={5}>
+    <mesh ref={mesh} scale={10}>
       <boxGeometry></boxGeometry>
       <rawShaderMaterial
         args={[
