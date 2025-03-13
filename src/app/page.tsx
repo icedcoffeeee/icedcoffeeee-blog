@@ -45,24 +45,42 @@ export default function Page() {
 
         <div>
           <h1>Posts</h1>
-          <section className="overflow-x-scroll w-full">
-            <div className="posts my-5 mx-2 md:mx-0 w-max md:w-full grid [grid-template-columns:80svw_repeat(2,max-content)] md:[grid-template-columns:1fr_repeat(2,max-content)] border-b border-foreground/50">
-              <div className="posts contents font-bold">
-                <div>Title</div>
-                <div>Date</div>
-                <div>Tags</div>
+          <section className="overflow-x-scroll w-full min-h-60 md:h-full">
+            <div className="my-5 mx-2 md:mx-0">
+              <div
+                data-has-post={!!posts.length}
+                className="posts grid
+                data-[has-post=true]:grid-cols-[80%_repeat(2,max-content)]
+                data-[has-post=false]:grid-cols-[1fr_repeat(2,max-content)]
+                md:data-[has-post=true]:grid-cols-[1fr_repeat(2,max-content)]"
+              >
+                <div className="contents font-bold">
+                  <div>Title</div>
+                  <div>Date</div>
+                  <div>Tags</div>
+                </div>
+                {!posts.length ? (
+                  <>
+                    <div className="text-foreground/50">None Yet</div>
+                    <div></div>
+                    <div></div>
+                  </>
+                ) : (
+                  posts.map((p, i) => {
+                    return (
+                      <Link
+                        key={i}
+                        href={"posts/" + p.slug}
+                        className="contents"
+                      >
+                        <div className="line-clamp-2">{p.title}</div>
+                        <div>{p.date}</div>
+                        <div className="font-mono">{p.tags}</div>
+                      </Link>
+                    );
+                  })
+                )}
               </div>
-              {posts.map((p, i) => (
-                <Link
-                  href={"/posts/" + p.slug}
-                  key={i}
-                  className="posts contents"
-                >
-                  <div className="line-clamp-2">{p.title}</div>
-                  <div>{p.date}</div>
-                  <div>{p.tags}</div>
-                </Link>
-              ))}
             </div>
           </section>
         </div>

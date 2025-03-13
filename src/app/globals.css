@@ -49,7 +49,7 @@
     }
   }
 
-  .posts > div {
+  .posts * {
     @apply border-t border-foreground/50 px-4;
   }
 
