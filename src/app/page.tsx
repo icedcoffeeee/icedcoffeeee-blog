@@ -27,7 +27,7 @@ export default function Page() {
       {
         //<section className="relative -m-4 min-h-svh w-svw flex justify-center items-center">
         //<div className="relative size-30 rounded-full overflow-clip shadow z-10">
-        //<Image src="/images/me.jpg" alt="me" fill></Image>
+        //<Image src="/images/me.jpg" alt="me" fill style={{ objectFit: "cover" }}></Image>
         //</div>
         //<Orbital shaders={shaders}></Orbital>
         //</section>
@@ -80,17 +80,20 @@ function Project({ project }: { project: Project }) {
       </div>
       {!!project.img && (
         <div
-          className="aspect-square h-full bg-contain rounded overflow-clip"
-          style={{ position: "relative" }}
+          className="aspect-square h-full rounded overflow-clip"
+          style={{
+            position: "relative",
+            filter: "drop-shadow(var(--drop-shadow-md))",
+          }}
         >
           <Image
             src={"/images/" + project.img}
             alt={project.img.split(".")[0]}
             fill
-            className={
-              "shadow object-cover" +
-              (project.img.split(".")[1] === "svg" && " scale-50")
-            }
+            style={{
+              objectFit: "cover",
+              scale: project.img.split(".")[1] === "svg" ? 0.5 : 1,
+            }}
           ></Image>
         </div>
       )}
