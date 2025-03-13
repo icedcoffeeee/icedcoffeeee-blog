@@ -30,6 +30,7 @@ export function getData(): Data {
 
   let posts = [];
   for (let dir of readdirSync(fp("posts/"))) {
+    if (dir === "empty") continue;
     const frontmatter = matter(readFileSync(fp("posts/" + dir), "utf8"));
     posts.push({
       slug: dir.split(".")[0],
