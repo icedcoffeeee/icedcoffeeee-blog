@@ -14,6 +14,7 @@ export type Post = {
   title: string;
   date: string;
   tags: string[];
+  content: string;
 };
 
 export type Data = {
@@ -37,9 +38,10 @@ export function getData(): Data {
     if (dir === "empty") continue;
     const frontmatter = matter(readFileSync(fp("posts/" + dir), "utf8"));
     posts.push({
+      ...frontmatter.data,
       slug: dir.split(".")[0],
       date: dateF.format(new Date(dir.split("-").slice(0, 2).join("-"))),
-      ...frontmatter.data,
+      content: frontmatter.content,
     } as Post);
   }
 

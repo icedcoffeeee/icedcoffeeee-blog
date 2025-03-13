@@ -1,8 +1,6 @@
-import { fp } from "@/lib";
-import { readFileSync } from "fs";
+import { getData } from "@/lib";
 import { notFound } from "next/navigation";
 
-import matter from "gray-matter";
 import { unified } from "unified";
 import parse from "remark-parse";
 import math from "remark-math";
@@ -13,19 +11,18 @@ import katex from "rehype-katex";
 type Page = { params: Promise<{ slug: string }> };
 export default async function Page({ params }: Page) {
   const { slug } = await params;
-  const filepath = fp("posts/" + slug + ".md");
-  let contents;
-  try {
-    contents = readFileSync(filepath, "utf8");
-  } catch {
-    return notFound();
-  }
+  const { posts } = getData();
 
-  const { data, ...frontmatter } = matter(contents);
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) return notFound();
+
   const content = await unified()
+    // remark
     .use(parse)
     .use(math)
-    .use(mark2hype)
+    .use(mark2hype, { allowDangerousHtml: true })
+
+    // rehype
     .use(katex, {
       displayMode: true,
       macros: {
@@ -34,26 +31,25 @@ export default async function Page({ params }: Page) {
         "\\dd": "\\,\\mathrm{d}",
       },
     })
-    .use(stringify)
-    .process(frontmatter.content)
-    .then((v) => v.toString());
+    .use(stringify, { allowDangerousHtml: true })
 
-  // @ts-ignore
-  const trueDate = new Date(slug.split("-").slice(0, 2));
-  const formatDate = new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    year: "numeric",
-  });
+    .process(post.content)
+    .then((v) => v.toString());
 
   return (
     <main className="flex flex-col sm:items-center">
-      <div className="sm:w-lg">
-        <span className="text-sm">{formatDate.format(trueDate)}</span>
-        <h1 className="mt-0 mb-5">{data.title}</h1>
-        <div
-          className="text-justify"
-          dangerouslySetInnerHTML={{ __html: content }}
-        ></div>
+      <div
+        className="sm:w-lg
+        text-foreground
+        prose dark:prose-invert
+        prose-headings:font-mono
+        prose-h1:text-2xl
+        prose-h2:text-xl
+        prose-h3:text-lg"
+      >
+        <span>{post.date}</span>
+        <h1>{post.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: content }}></div>
       </div>
     </main>
   );

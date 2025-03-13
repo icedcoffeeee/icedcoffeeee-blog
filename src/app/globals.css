@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "katex/dist/katex.min.css";
 
+@plugin "@tailwindcss/typography";
+
 :root {
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
@@ -23,10 +25,6 @@
 @layer utilities {
   h1 {
     @apply mt-5 text-xl font-mono;
-  }
-
-  code {
-    @apply text-sm font-mono bg-foreground/10 w-full block p-2 my-2 rounded;
   }
 
   hl {
