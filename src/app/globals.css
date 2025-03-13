@@ -33,6 +33,22 @@
     @apply bg-red-700/50 px-1 rounded mx-1;
   }
 
+  .fade {
+    animation: fade;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   .posts > div {
     @apply border-t border-foreground/50 px-4;
   }
@@ -41,7 +57,3 @@
     border: 1px solid red;
   }
 }
-
-/** > * {*/
-/*  border: 1px solid red;*/
-/*}*/

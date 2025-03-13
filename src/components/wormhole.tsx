@@ -9,14 +9,19 @@ export function WormHole() {
   const [loaded, setLoaded] = useState(false);
   return (
     <div
-      data-loaded={loaded}
-      className="absolute top-0 -z-10 w-full h-full transition-all opacity-0 data-[loaded=true]:opacity-100"
+      className={
+        "absolute top-0 -z-10 w-full h-full transition-all opacity-0 " +
+        (loaded && "fade")
+      }
       style={{
         maskImage:
           "linear-gradient(to bottom, rgba(0,0,0,0), white, rgba(0,0,0,0))",
       }}
     >
-      <Canvas onCreated={() => setLoaded(true)} camera={{ rotation: [0, 0, 0.4] }}>
+      <Canvas
+        onCreated={() => setLoaded(true)}
+        camera={{ rotation: [0, 0, 0.4] }}
+      >
         <WormHoleObject></WormHoleObject>
       </Canvas>
     </div>
