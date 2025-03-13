@@ -46,8 +46,8 @@ export default async function Page({ params }: Page) {
   });
 
   return (
-    <main className="flex flex-col items-center">
-      <div className="max-w-lg">
+    <main className="flex flex-col sm:items-center">
+      <div className="sm:w-lg">
         <span className="text-sm">{formatDate.format(trueDate)}</span>
         <h1 className="mt-0 mb-5">{data.title}</h1>
         <div
