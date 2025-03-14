@@ -75,7 +75,7 @@ export default function Page() {
                       >
                         <div className="line-clamp-2">{p.title}</div>
                         <div>{p.date}</div>
-                        <div className="font-mono">{p.tags}</div>
+                        <div className="font-mono">{p.tags.join("; ")}</div>
                       </Link>
                     );
                   })

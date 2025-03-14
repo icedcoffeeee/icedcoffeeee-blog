@@ -47,8 +47,15 @@ export default async function Page({ params }: Page) {
         prose-h2:text-xl
         prose-h3:text-lg"
       >
-        <span>{post.date}</span>
+        <div>{post.date}</div>
         <h1>{post.title}</h1>
+        <div className="flex gap-2 mb-5">
+          {post.tags.map((t, i) => (
+            <div key={i} className="text-sm font-mono px-1 bg-blue-900 rounded">
+              {t}
+            </div>
+          ))}
+        </div>
         <div dangerouslySetInnerHTML={{ __html: content }}></div>
       </div>
     </main>
