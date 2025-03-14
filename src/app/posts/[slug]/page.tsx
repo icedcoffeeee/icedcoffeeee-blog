@@ -54,3 +54,15 @@ export default async function Page({ params }: Page) {
     </main>
   );
 }
+
+export async function generateMetadata({ params }: Page) {
+  const { slug } = await params;
+  const { posts } = getData();
+
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) return notFound();
+  return {
+    title: post.title + " | icedcoffeeee",
+    description: "icedcoffeeee's rants",
+  };
+}
