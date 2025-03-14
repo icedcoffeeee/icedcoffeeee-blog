@@ -39,7 +39,7 @@ export default async function Page({ params }: Page) {
   return (
     <main className="flex flex-col sm:items-center">
       <div
-        className="sm:w-lg
+        className="max-w-2xl w-full
         text-foreground
         prose dark:prose-invert
         prose-headings:font-mono
