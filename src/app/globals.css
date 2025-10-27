@@ -48,10 +48,10 @@
   }
 
   .posts * {
-    @apply border-t border-foreground/50 px-4;
+    @apply border-b border-foreground/50 px-4;
   }
 
   .debug {
-    border: 1px solid red;
+    @apply border border-red-500;
   }
 }

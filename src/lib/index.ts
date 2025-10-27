@@ -31,6 +31,7 @@ export function getData(): Data {
 
   let posts = [];
   const dateF = Intl.DateTimeFormat("en-US", {
+    day:"2-digit",
     month: "long",
     year: "numeric",
   });
@@ -40,7 +41,7 @@ export function getData(): Data {
     posts.push({
       ...frontmatter.data,
       slug: dir.split(".")[0],
-      date: dateF.format(new Date(dir.split("-").slice(0, 2).join("-"))),
+      date: dateF.format(frontmatter.data.date),
       content: frontmatter.content,
     } as Post);
   }

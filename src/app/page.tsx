@@ -66,16 +66,27 @@ export default function Page() {
                     <div></div>
                   </>
                 ) : (
-                  posts.map((p, i) => {
+                  posts.map((post, i) => {
                     return (
                       <Link
                         key={i}
-                        href={"posts/" + p.slug}
+                        href={"posts/" + post.slug}
                         className="contents"
                       >
-                        <div className="line-clamp-2">{p.title}</div>
-                        <div>{p.date}</div>
-                        <div className="font-mono">{p.tags.join("; ")}</div>
+                        <div className="line-clamp-2">{post.title}</div>
+                        <div>{post.date}</div>
+                        <span>
+                          {post.tags?.map((tag, i) => (
+                            <div
+                              key={i}
+                              className="font-mono"
+                              style={{ border: 0 }}
+                            >
+                              {tag}
+                              {i === post.tags.length - 1 ? "" : ";"}
+                            </div>
+                          ))}
+                        </span>
                       </Link>
                     );
                   })

@@ -1,12 +1,15 @@
 import { getData } from "@/lib";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
-
 import { unified } from "unified";
-import parse from "remark-parse";
-import math from "remark-math";
+
+import gfm from "remark-gfm";
 import mark2hype from "remark-rehype";
-import stringify from "rehype-stringify";
+import math from "remark-math";
+import parse from "remark-parse";
+
 import katex from "rehype-katex";
+import stringify from "rehype-stringify";
 
 type Page = { params: Promise<{ slug: string }> };
 export default async function Page({ params }: Page) {
@@ -19,6 +22,7 @@ export default async function Page({ params }: Page) {
   const content = await unified()
     // remark
     .use(parse)
+    .use(gfm)
     .use(math)
     .use(mark2hype, { allowDangerousHtml: true })
 
@@ -45,12 +49,13 @@ export default async function Page({ params }: Page) {
         prose-headings:font-mono
         prose-h1:text-2xl
         prose-h2:text-xl
-        prose-h3:text-lg"
+        prose-h3:text-lg
+        prose-li:-mb-5"
       >
         <div>{post.date}</div>
         <h1>{post.title}</h1>
         <div className="flex gap-2 mb-5">
-          {post.tags.map((t, i) => (
+          {post.tags?.map((t, i) => (
             <div key={i} className="text-sm font-mono px-1 bg-blue-900 rounded">
               {t}
             </div>
@@ -62,7 +67,7 @@ export default async function Page({ params }: Page) {
   );
 }
 
-export async function generateMetadata({ params }: Page) {
+export async function generateMetadata({ params }: Page): Promise<Metadata> {
   const { slug } = await params;
   const { posts } = getData();
 
