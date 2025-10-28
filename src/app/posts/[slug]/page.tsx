@@ -50,7 +50,13 @@ export default async function Page({ params }: Page) {
         prose-h1:text-2xl
         prose-h2:text-xl
         prose-h3:text-lg
-        prose-li:-mb-5"
+        prose-li:-mb-5
+        prose-p:text-justify
+        prose-p:relative
+        prose-img:w-full
+        sm:prose-img:w-1/2
+        sm:prose-img:translate-x-1/2
+        "
       >
         <div>{post.date}</div>
         <h1>{post.title}</h1>
