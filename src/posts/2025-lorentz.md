@@ -28,6 +28,8 @@ is just a particle density field.
 
 [^1]: see Stefan-Boltzmann relation.
 
+![thermal](/posts/thermal.jpg)
+
 An even extreme example is the metric field, which hold the curvature value of
 spacetime at some specific point in space. I brought this up because of an
 important fact: the gravitational force does not exist. Not in the traditional
@@ -43,9 +45,10 @@ During that fall, you're inertial. And inertial objects follow one simple rule:
 the straight line in spacetime. But spacetime is a hypersurface, so we call
 that straight line _'the geodesic'_.
 
-So, am I saying that the Lorentz force isn't real? And that there's a
-electromagnetic geodesic? No. The specific case of electromagnetism is much
-much more complicated.
+![gravity](/posts/gravity.svg)
+
+So, am I saying that the Lorentz force isn't real? And that there's an
+electromagnetic geodesic? No. The specific case of electromagnetism is much, much more complicated.
 
 # Quantum Electrodynamics
 
@@ -73,11 +76,11 @@ in some other reference frame.
 
 Hence, when they move in vicinity, this energy starts to "ricochet" between the
 two, forming a standing wave. This causes the positional probability of the
-charge to be focused in a trajectory that follows Lorentz's law!
+charge to be focused on a trajectory that follows Lorentz's law!
 
 # Rebuttals
 
-Wait- this could've been explained without quantum mechanics. And definitely
+Wait - this could've been explained without quantum mechanics. And definitely
 without relativity. Why the hassle? These are very valid concerns in general.
 One should always accept the easiest explanation before unnecessarily diving
 too deep[^2].
@@ -96,11 +99,13 @@ lines aren't the protons, they're photons that are also following a
 probabilistic trajectory all the way to your eye retina (or a camera sensor)
 which act as the metallic plate, collapsing the photon wavefunction.
 
+![tokamak](/posts/tokamak.png)
+
 # Conclusion
 
 So, what have we gained? What can we do with this information? Honestly, not
 much. Current tech is pretty limited to expand on this. Most if not all
-innovation today is focused on clear cut profit, no room for loss:
+innovation today is focused on clear-cut profit, no room for loss:
 semiconductors, materials, optical fibers. I would love it if people cared
 a bit more about intrinsic particles and manipulation thereof; but that's too
 much to expect from the collective.
