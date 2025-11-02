@@ -10,10 +10,10 @@ contributor, and educator.
 Some things I've done:
 
 1. [Laser Engineering Internship](/coherent) -- _Coherent_
-1. [Computer Vision Research](/fyp) -- _PRC, UM_
+1. [Computer Vision Research](/research) -- _PRC, UM_
 1. [Fullstack Web Development](/cesium) -- _GECC, UM_
 1. [Open Source Maintainance](/manim) -- _manim_
-1. Tutoring -- Freelance
+1. Tutoring -- _Freelance_
    ![tutoring](/library.jpg 'right,half')
 
 I graduated first-class from [Universiti Malaya](https://um.edu.my) in 2025.

@@ -3,13 +3,13 @@
 
   let bar = $state(false);
   let open = () => (bar = true);
-  let clos = () => (bar = false);
+  let close = () => (bar = false);
 </script>
 
 {#snippet links()}
-  <a href="/" onclick={clos}>/</a>
-  <a href="/about" onclick={clos}>about</a>
-  <a href="/posts" onclick={clos}>blog</a>
+  <a href="/" onclick={close}>/</a>
+  <a href="/about" onclick={close}>about</a>
+  <a href="/posts" onclick={close}>blog</a>
 {/snippet}
 
 <nav class="sticky top-0 hidden w-full justify-end gap-20 p-4 font-mono text-sm font-bold md:flex">
@@ -26,7 +26,7 @@
   data-open={bar}
   class="sidebar absolute top-0 left-0 flex h-screen w-screen flex-col justify-center gap-4 bg-background/50 p-4 font-mono font-bold backdrop-blur-sm"
 >
-  <button onclick={clos} class="absolute top-4 right-4 self-end md:hidden">
+  <button onclick={close} class="absolute top-4 right-4 self-end md:hidden">
     <X size={15}></X>
   </button>
   {@render links()}
