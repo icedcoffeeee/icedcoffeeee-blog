@@ -1,11 +1,13 @@
 <script lang="ts">
   //@ts-nocheck
+  import { page } from "$app/state";
   import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-svelte";
   import { Menu, X } from "lucide-svelte";
 
   let bar = $state(false);
   let open = () => (bar = true);
   let close = () => (bar = false);
+  console.log(page.url.pathname);
 </script>
 
 {#snippet links()}
@@ -29,7 +31,8 @@
 {/snippet}
 
 <nav
-  class="sticky top-0 hidden w-full items-center justify-between gap-20 p-4 font-mono text-sm font-bold md:flex"
+  class="sticky top-0 hidden w-full items-center justify-between gap-20 p-4 font-mono text-sm font-bold md:flex
+  {page.url.pathname !== '/' ? 'bg-background/50 backdrop-blur-sm' : ''}"
 >
   {@render socmed()}
   <div class="flex gap-20">
@@ -38,7 +41,8 @@
 </nav>
 
 <div
-  class="sticky top-0 z-1 flex w-full items-center justify-between bg-background/50 p-4 backdrop-blur-sm md:hidden"
+  class="sticky top-0 z-1 flex w-full items-center justify-between p-4 md:hidden
+  {page.url.pathname !== '/' ? 'bg-background/50 backdrop-blur-sm' : ''}"
 >
   {@render socmed()}
   <button onclick={open}>

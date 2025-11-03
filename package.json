@@ -33,8 +33,10 @@
   },
   "dependencies": {
     "@threlte/core": "^8.1.8",
+    "@types/three": "^0.181.0",
     "lucide-svelte": "^0.552.0",
     "mdsvex": "^0.12.6",
-    "svelte-target-blank": "^1.0.0"
+    "svelte-target-blank": "^1.0.0",
+    "three": "^0.181.0"
   }
 }
