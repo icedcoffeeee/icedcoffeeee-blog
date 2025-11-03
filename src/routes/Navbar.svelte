@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { GithubIcon, LinkedinIcon, Menu, TwitterIcon, X } from "lucide-svelte";
+  //@ts-nocheck
+  import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-svelte";
+  import { Menu, X } from "lucide-svelte";
 
   let bar = $state(false);
   let open = () => (bar = true);
@@ -46,7 +48,7 @@
 
 <div
   data-open={bar}
-  class="sidebar absolute top-0 left-0 z-100 flex h-screen w-screen flex-col justify-center gap-4 bg-background/50 p-4 font-mono font-bold backdrop-blur-sm"
+  class="sidebar fixed top-0 left-0 z-100 flex h-screen w-screen flex-col justify-center gap-4 bg-background/50 p-4 font-mono font-bold backdrop-blur-sm"
 >
   <button onclick={close} class="absolute top-4 right-4 self-end md:hidden">
     <X size={15}></X>
@@ -55,7 +57,7 @@
 </div>
 
 <style lang="postcss">
-  @reference "../app.css";
+  @reference "$/app.css";
 
   .sidebar {
     @apply transition-all duration-200;

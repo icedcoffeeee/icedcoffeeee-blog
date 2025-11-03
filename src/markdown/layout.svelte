@@ -8,20 +8,4 @@
   const { children } = $props();
 </script>
 
-<div
-  class="prose
-  mb-6 max-w-2xl
-  prose-invert
-  marker:text-(--tw-prose-body)
-
-  md:mb-0
-
-  prose-p:my-4
-  prose-p:leading-6
-  prose-a:underline-offset-4
-  prose-li:my-0
-  prose-img:my-0
-  "
->
-  {@render children()}
-</div>
+{@render children()}

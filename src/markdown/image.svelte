@@ -12,12 +12,12 @@
 >
   <div
     class="transition-all hover:rotate-1
-      md:absolute md:w-1/4
+      md:absolute md:w-1/3 2xl:w-1/2
       {half ? 'w-1/2' : 'w-full'}
       {right ? 'md:left-[calc(100%+1rem)]' : 'md:right-[calc(100%+1rem)]'}
       "
   >
     <img {...props} class="rounded" />
-    <span class="italic">&mdash; {props.alt}</span>
+    <div class="w-full italic {!right ? 'md:text-right' : ''}">&mdash; {props.alt}</div>
   </div>
 </div>
