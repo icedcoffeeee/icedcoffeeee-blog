@@ -29,7 +29,7 @@ const config = {
       remarkPlugins: [footnotes, math],
       rehypePlugins: [katex, katexOpt],
       extensions: [".md"],
-      layout: { _: join(__dirname, "./src/layouts/layout.svelte") },
+      layout: { _: join(__dirname, "./src/markdown/layout.svelte") },
     }),
     targetBlank({ quietList: "**/*.md" }),
   ],
