@@ -7,7 +7,6 @@
   let bar = $state(false);
   let open = () => (bar = true);
   let close = () => (bar = false);
-  console.log(page.url.pathname);
 </script>
 
 {#snippet links()}
@@ -31,7 +30,7 @@
 {/snippet}
 
 <nav
-  class="sticky top-0 hidden w-full items-center justify-between gap-20 p-4 font-mono text-sm font-bold md:flex
+  class="sticky top-0 hidden w-full items-center justify-between gap-20 p-4 font-mono text-sm font-bold sm:flex
   {page.url.pathname !== '/' ? 'bg-background/50 backdrop-blur-sm' : ''}"
 >
   {@render socmed()}
@@ -41,7 +40,7 @@
 </nav>
 
 <div
-  class="sticky top-0 z-1 flex w-full items-center justify-between p-4 md:hidden
+  class="sticky top-0 z-1 flex w-full items-center justify-between p-4 sm:hidden
   {page.url.pathname !== '/' ? 'bg-background/50 backdrop-blur-sm' : ''}"
 >
   {@render socmed()}

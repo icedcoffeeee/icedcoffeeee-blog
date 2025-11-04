@@ -4,7 +4,7 @@ import { formatDate } from "$/lib";
 
 export async function load({ params: { slug } }: PageLoadEvent) {
   try {
-    const page = await import(/* @vite-ignore */ `../../../posts/${slug}.md`);
+    const page = await import(`../../../posts/${slug}.md`);
     page.metadata.date = formatDate(page.metadata.date);
     return { content: page.default, metadata: page.metadata };
   } catch (e) {
