@@ -1,54 +1,24 @@
-import YAML from "yaml";
-import path from "path";
-import { readdirSync, readFileSync } from "fs";
-import matter from "gray-matter";
+import { goto } from "$app/navigation";
+import { page } from "$app/state";
 
-export function fp(fp: string) {
-  return path.resolve(process.cwd(), "src/" + fp);
-}
-
-export type Project = { title: string; img: string; desc: string };
-export type Shaders = { vertex: string; fragment: string };
 export type Post = {
   slug: string;
-  title: string;
   date: string;
+  title: string;
   tags: string[];
-  content: string;
 };
 
-export type Data = {
-  projects: Project[];
-  shaders: Shaders;
-  posts: Post[];
-};
+const intl = Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "numeric" });
 
-export function getData(): Data {
-  const projects = readFileSync(fp("lib/projects.yml"), "utf8");
+export function formatDate(isoDate: string) {
+  return intl.format(new Date(isoDate));
+}
 
-  const vertex = readFileSync(fp("shaders/vert.glsl"), "utf8");
-  const fragment = readFileSync(fp("shaders/frag.glsl"), "utf8");
-
-  let posts = [];
-  const dateF = Intl.DateTimeFormat("en-US", {
-    day:"2-digit",
-    month: "long",
-    year: "numeric",
-  });
-  for (let dir of readdirSync(fp("posts/"))) {
-    if (dir === "empty") continue;
-    const frontmatter = matter(readFileSync(fp("posts/" + dir), "utf8"));
-    posts.push({
-      ...frontmatter.data,
-      slug: dir.split(".")[0],
-      date: dateF.format(frontmatter.data.date),
-      content: frontmatter.content,
-    } as Post);
-  }
-
-  return {
-    projects: YAML.parse(projects),
-    shaders: { vertex, fragment },
-    posts,
-  };
+export function gotoFilterTag(tag: string) {
+  const url = page.url;
+  url.toString().includes(tag)
+    ? url.searchParams.delete("tag", tag)
+    : url.searchParams.append("tag", tag);
+  url.pathname = "/posts";
+  goto(url, { invalidateAll: true });
 }

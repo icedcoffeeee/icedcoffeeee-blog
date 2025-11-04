@@ -1,0 +1,33 @@
+@import "katex/dist/katex.min.css";
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+.debug {
+  @apply border border-red-500;
+}
+
+@theme inline {
+  --color-background: var(--color-neutral-950);
+  --color-foreground: var(--color-neutral-300);
+  --color-primary: var(--color-blue-500);
+
+  --font-sans: "Karla", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+h1 {
+  @apply font-mono text-2xl font-bold;
+}
+
+h2 {
+  @apply text-lg;
+}
+
+.fullscreen {
+  @apply h-[calc(100svh-60px)] w-full;
+}

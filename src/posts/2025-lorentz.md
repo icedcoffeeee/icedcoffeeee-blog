@@ -3,7 +3,7 @@ title: Behind the Lorentz Force
 date: 2025-10-27
 tags:
 - electromagnetism
-- quantum mechanics
+- quantum-mechanics
 ---
 
 I remember when I first learned about electromagnetism; moving electrons
@@ -12,7 +12,7 @@ relevantly here) how a magnetic field can in turn "push" electrons in some
 direction. Succinctly:
 
 $$
-\vb F = q(\vb v\times \vb B)
+\mathbf F = q(\mathbf v\times \mathbf B)
 $$
 
 But that's high school physics. That's for engineers not physicists. So, where
@@ -28,7 +28,7 @@ is just a particle density field.
 
 [^1]: see Stefan-Boltzmann relation.
 
-![thermal](/posts/thermal.jpg)
+![Temperature field](/posts/thermal.jpg)
 
 An even extreme example is the metric field, which hold the curvature value of
 spacetime at some specific point in space. I brought this up because of an
@@ -45,7 +45,7 @@ During that fall, you're inertial. And inertial objects follow one simple rule:
 the straight line in spacetime. But spacetime is a hypersurface, so we call
 that straight line _'the geodesic'_.
 
-![gravity](/posts/gravity.svg)
+![Curved spacetime](/posts/gravity.svg 'right')
 
 So, am I saying that the Lorentz force isn't real? And that there's an
 electromagnetic geodesic? No. The specific case of electromagnetism is much, much more complicated.
@@ -99,7 +99,7 @@ lines aren't the protons, they're photons that are also following a
 probabilistic trajectory all the way to your eye retina (or a camera sensor)
 which act as the metallic plate, collapsing the photon wavefunction.
 
-![tokamak](/posts/tokamak.png)
+![Tokamak](/posts/tokamak.png)
 
 # Conclusion
 
